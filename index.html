@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professor Michael Lublinsky - Physics Department</title>
+    <link href="output.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+      <style>
+      /* Background Image */
+      body {
+        background-image: url('images/bg.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+
+
+
+}
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+      <!-- Header Section -->
+      <header
+        class="border-b border-gray-200 pb-6 mb-8 flex flex-col md:flex-row items-center md:items-start">
+        <!-- Profile Image (Left) -->
+        <div class="w-32 h-32 md:w-40 md:h-40 mb-4 md:mb-0 md:mr-6">
+          <img
+            src="images/profile.jpg"
+            alt="Professor Michael Lublinsky"
+            class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg" />
+        </div>
+
+        <!-- Text Content (Right) -->
+        <div class="text-center md:text-left">
+          <h1 class="text-4xl font-bold text-blue-900">
+            Professor Michael Lublinsky
+          </h1>
+          <div class="mt-4 text-gray-600">
+            <p class="text-xl">Ben-Gurion University of the Negev</p>
+            <p>Department of Physics</p>
+            <p>Building 54, Room 217, Beer Sheva 84105, Israel</p>
+            <p>Tel: 08-6461849, Fax: 08-6472904</p>
+            <p>
+              Email:
+              <a
+                href="mailto:lublinm@bgu.ac.il"
+                class="text-blue-600 hover:text-blue-800">
+                lublinm@bgu.ac.il
+              </a>
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Tabs Navigation -->
+      <div class="border-b border-gray-200 mb-8">
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center">
+          <li class="mr-2">
+            <button
+              data-tab="main"
+              class="tab-btn active p-4 rounded-t-lg hover:text-blue-800">
+              Main
+            </button>
+          </li>
+          <li class="mr-2">
+            <button
+              data-tab="about"
+              class="tab-btn p-4 rounded-t-lg hover:text-blue-800">
+              About Me
+            </button>
+          </li>
+          <li class="mr-2">
+            <button
+              data-tab="bgu-group"
+              class="tab-btn p-4 rounded-t-lg hover:text-blue-800">
+              BGU Group
+            </button>
+          </li>
+          <li class="mr-2">
+            <button
+              data-tab="teaching"
+              class="tab-btn p-4 rounded-t-lg hover:text-blue-800">
+              Teaching
+            </button>
+          </li>
+          <li class="mr-2">
+            <button
+              data-tab="research"
+              class="tab-btn p-4 rounded-t-lg hover:text-blue-800">
+              Research
+            </button>
+          </li>
+          <li class="mr-2">
+            <button
+              data-tab="collaborations"
+              class="tab-btn p-4 rounded-t-lg hover:text-blue-800">
+              Collaborations
+            </button>
+          </li>
+          <li>
+            <button
+              data-tab="grants"
+              class="tab-btn p-4 rounded-t-lg hover:text-blue-800">
+              Research Grants
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab Content Container -->
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <!-- Main Tab Content -->
+        <div id="main" class="tab-content active">
+          <h2 class="text-2xl font-semibold text-blue-900 mb-4">Welcome</h2>
+          <p class="text-gray-700 mb-4">
+            Students at all levels are most welcome! There are MSc, PhD and
+            Postdoc Research Fellowships! Applications are welcome any time.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Please use the navigation tabs above to learn more about my
+            research, teaching, and academic activities.
+          </p>
+          <div class="mt-6">
+            <h3 class="text-xl font-semibold text-blue-900 mb-3">
+              Research area: Theoretical High Energy and Nuclear Physics
+            </h3>
+          </div>
+        </div>
+
+        <!-- About Tab Content -->
+        <div id="about" class="tab-content">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Left Column - Profile -->
+            <div class="md:col-span-1 flex flex-col space-y-4">
+              <img
+                src="/images/MeSKI.jpg"
+                alt="Professor Michael Lublinsky"
+                class="w-full h-64 object-cover rounded-lg shadow-md" />
+
+              <img
+                src="/images/MeTENNIS.jpg"
+                alt="Professor Michael Lublinsky"
+                class="w-full h-64 object-cover rounded-lg shadow-md" />
+            </div>
+
+            <!-- Right Column - Bio -->
+            <div class="md:col-span-2">
+              <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-900 mb-3">
+                  Education
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>
+                    1989 - 1993 Undergraduate Student - St-Petersburg State
+                    Technical University.
+                  </li>
+                  <li>
+                    1994 B. Sc. in Physics Technion – Israel Institute of
+                    Technology.
+                  </li>
+                  <li>
+                    1997 M. Sc. in Physics Technion – Israel Institute of
+                    Technology.
+                  </li>
+                  <li>
+                    2002 Ph. D. in Physics Technion – Israel Institute of
+                    Technology
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-6 flex flex-col space-y-3">
+                <a
+                  href="https://physics.bgu.ac.il/~lublinm/files/cv_web-1.pdf"
+                  target="_blank"
+                  class="border-2 border-blue-500 text-blue-500 px-6 py-3 rounded-lg shadow-md hover:bg-blue-500 hover:text-white transition">
+                  CV
+                </a>
+
+                <a
+                  href="https://inspirehep.net/authors/1019574"
+                  target="_blank"
+                  class="border-2 border-blue-500 text-blue-500 px-6 py-3 rounded-lg shadow-md hover:bg-blue-500 hover:text-white transition">
+                  PUBLICATIONS
+                </a>
+
+                <a
+                  href="https://orcid.org/0000-0003-3594-2543"
+                  target="_blank"
+                  class="border-2 border-blue-500 text-blue-500 px-6 py-3 rounded-lg shadow-md hover:bg-blue-500 hover:text-white transition">
+                  ORCID
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BGU Group Tab Content -->
+        <div id="bgu-group" class="tab-content">
+          <h2 class="text-2xl font-semibold text-blue-900 mb-6">
+            BGU Physics Group
+          </h2>
+
+          <!-- Present Group at BGU -->
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Present Group at BGU:
+            </h3>
+            <p class="text-lg text-gray-700">Dr. Naveen Kumara</p>
+          </div>
+
+          <!-- Former Students -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+              Former Students:
+            </h3>
+            <div class="space-y-6">
+              <!-- Arthur Shulkin -->
+              <div class="border-l-4 border-blue-500 pl-4">
+                <p class="text-lg font-semibold text-gray-800">
+                  Arthur Shulkin (MSc 2014)
+                </p>
+                <p class="text-gray-700 italic">
+                  "Triple Pomeron Vertex in the wave-functional formalism of
+                  high energy QCD"
+                </p>
+              </div>
+
+              <!-- Adam Reichenthal -->
+              <div class="border-l-4 border-blue-500 pl-4">
+                <p class="text-lg font-semibold text-gray-800">
+                  Adam Reichenthal (MSc 2014)
+                </p>
+                <p class="text-gray-700 italic">
+                  "Transport coefficients from fluid-gravity correspondence"
+                </p>
+              </div>
+
+              <!-- Yair Mulian -->
+              <div class="border-l-4 border-blue-500 pl-4">
+                <p class="text-lg font-semibold text-gray-800">
+                  Yair Mulian (PhD 2017)
+                </p>
+                <p class="text-gray-700 italic">
+                  "High energy QCD at next-to-leading order"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching Tab Content -->
+        <div id="teaching" class="tab-content">
+          <h2 class="text-2xl font-semibold text-blue-900 mb-6">Teaching</h2>
+
+          <div class="space-y-4">
+            <a
+              href="https://physics.bgu.ac.il/COURSES/PHYSICS2_physics/"
+              target="_blank"
+              class="block text-blue-600 hover:text-blue-800 text-lg font-medium transition">
+              🔗 Physics 2 for Physics Majors
+            </a>
+
+            <a
+              href="https://physics.bgu.ac.il/COURSES/QuantumIII/"
+              target="_blank"
+              class="block text-blue-600 hover:text-blue-800 text-lg font-medium transition">
+              🔗 Graduate Quantum Mechanics (3)
+            </a>
+
+            <a
+              href="https://physics.bgu.ac.il/COURSES/QFT1/"
+              target="_blank"
+              class="block text-blue-600 hover:text-blue-800 text-lg font-medium transition">
+              🔗 Quantum Field Theory
+            </a>
+
+            <a
+              href="https://physics.bgu.ac.il/COURSES/GravitationI/"
+              target="_blank"
+              class="block text-blue-600 hover:text-blue-800 text-lg font-medium transition">
+              🔗 Gravitation 1
+            </a>
+
+            <a
+              href="https://moodle2.bgu.ac.il/moodle/course/view.php?id=41673"
+              target="_blank"
+              class="block text-blue-600 hover:text-blue-800 text-lg font-medium transition">
+              🔗 Electrodynamics
+            </a>
+          </div>
+        </div>
+
+        <!-- Research Tab Content -->
+        <div id="research" class="tab-content">
+          <h2 class="text-2xl font-semibold text-blue-900 mb-6">Research</h2>
+
+          <!-- QCD at High Energies -->
+          <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">
+              QCD at High Energies
+            </h3>
+            <img
+              src="images/QCD_res.jpg"
+              alt="QCD Research"
+              class="h-[350px] rounded-lg shadow-md mb-4 object-cover" />
+            <p class="text-gray-700">
+              We have entered the fascinating era of the Large Hadron Collider.
+              The microscopic theory describing the structure of protons and
+              nuclei is the theory of strong interactions, known as Quantum
+              ChromoDynamics (QCD). Even though the fundamental theory is known,
+              it is extremely difficult to deduce results of collision processes
+              from first-principle QCD calculations due to the complexity of the
+              theory, which involves mutual interactions between gluons, the
+              "photons" of strong interactions.
+            </p>
+            <a
+              href="https://physics.bgu.ac.il/~lublinm/rft.html"
+              target="_blank"
+              class="text-blue-600 hover:text-blue-800 font-medium">
+              🔗 Read more about QCD at High Energies
+            </a>
+          </div>
+
+          <!-- Fluid-Gravity Correspondence -->
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md mb-6">
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">
+              Fluid-Gravity Correspondence
+            </h3>
+            <img
+              src="images/lowX_poster_res.jpg"
+              alt="Fluid-Gravity Correspondence"
+              class="h-[550px] rounded-lg shadow-md mb-4 object-cover" />
+            <p class="text-gray-700">
+              Quark-Gluon Plasma (QGP) is created in Heavy Ion Collisions at the
+              Relativistic Heavy Ion Collider (RHIC) and LHC. A striking
+              discovery of RHIC is that QGP produced there is strongly coupled
+              and behaves like a nearly perfect fluid, with relativistic
+              hydrodynamics being an appropriate description of the observed
+              phenomena. Remarkably, hydrodynamical properties of QGP could be
+              studied using the gravitational theory of Black Holes in curved
+              five-dimensional spaces. The fluid/gravity correspondence relates
+              graviton absorption by a Black Hole to dissipation taking place in
+              the QGP.
+            </p>
+            <a
+              href="https://physics.bgu.ac.il/~lublinm/sQGP.html"
+              target="_blank"
+              class="text-blue-600 hover:text-blue-800 font-medium">
+              🔗 Read more about Fluid-Gravity Correspondence
+            </a>
+          </div>
+
+          <!-- Research Workshops -->
+          <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">
+              Research Workshops
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="text-lg font-medium text-blue-700">
+                  Heavy Ion Collisions at LHC (2015)
+                </h4>
+                <a
+                  href="https://physics.bgu.ac.il/~lublinm/workshop.html"
+                  target="_blank"
+                  class="text-blue-600 hover:text-blue-800 font-medium">
+                  🔗 View Workshop Details
+                </a>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="text-lg font-medium text-blue-700">
+                  Physics of Saturation: Precision and Quasi-Collectivity (2022)
+                </h4>
+                <a
+                  href="https://physics.bgu.ac.il/~lublinm/workshop_2.html"
+                  target="_blank"
+                  class="text-blue-600 hover:text-blue-800 font-medium">
+                  🔗 View Workshop Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collaborations Tab Content -->
+        <div id="collaborations" class="tab-content">
+          <h2 class="text-2xl font-semibold text-blue-900 mb-6">
+            Collaborations
+          </h2>
+
+          <div class="space-y-6">
+            <!-- HILHC Collaboration -->
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+              <h3 class="text-lg font-medium text-blue-800 mb-2">
+                HILHC Collaboration
+              </h3>
+              <a
+                href="https://physics.bgu.ac.il/~lublinm/IRSES.html"
+                class="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </a>
+            </div>
+
+            <!-- THOR Collaboration -->
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+              <h3 class="text-lg font-medium text-blue-800 mb-2">
+                THOR Collaboration
+              </h3>
+              <a
+                href="https://thor-cost.eu/"
+                class="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </a>
+            </div>
+
+            <!-- HIEIC Collaboration -->
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+              <h3 class="text-lg font-medium text-blue-800 mb-2">
+                HIEIC Collaboration
+              </h3>
+              <a
+                href="https://hieic.ncbj.gov.pl/"
+                class="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </a>
+            </div>
+
+            <!-- NA2-Small-x Collaboration -->
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+              <h3 class="text-lg font-medium text-blue-800 mb-2">
+                NA2-Small-x Collaboration
+              </h3>
+              <a
+                href="http://www.strong-2020.eu/networking-activities/na2-small-x.html"
+                class="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      <!-- Grants Tab Content -->
+<div id="grants" class="tab-content">
+  <h2 class="text-2xl font-semibold text-blue-900 mb-6">Research Grants</h2>
+
+  <div class="space-y-4">
+    <!-- Grant 1 -->
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200">
+      <h3 class="text-lg font-semibold text-blue-900">EU FP7 IRG (2010-2014)</h3>
+    </div>
+
+    <!-- Grant 2 -->
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200">
+      <h3 class="text-lg font-semibold text-blue-900">ISF (2012-2016)</h3>
+    </div>
+
+    <!-- Grant 3 -->
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200">
+      <h3 class="text-lg font-semibold text-blue-900">
+        EU FP7 
+        <a href="https://physics.bgu.ac.il/~lublinm/IRSES.html" class="text-blue-600 hover:text-blue-800">IRSES</a> (2013-2016)
+      </h3>
+    </div>
+
+    <!-- Grant 4 -->
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200">
+      <h3 class="text-lg font-semibold text-blue-900">BSF (2013-2017)</h3>
+    </div>
+
+    <!-- Grant 5 -->
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200">
+      <h3 class="text-lg font-semibold text-blue-900">ISF (2016-2020)</h3>
+    </div>
+
+    <!-- Grant 6 -->
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200">
+      <h3 class="text-lg font-semibold text-blue-900">BSF-NSF (2016-2019)</h3>
+    </div>
+
+    <!-- Grant 7 -->
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200">
+      <h3 class="text-lg font-semibold text-blue-900">BSF-NSF (2020-2022)</h3>
+    </div>
+
+    <!-- Grant 8 -->
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200">
+      <h3 class="text-lg font-semibold text-blue-900">
+        EU HORIZON 
+        <a href="https://hieic.ncbj.gov.pl/" class="text-blue-600 hover:text-blue-800">RISE</a> 2020 (2019-2023)
+      </h3>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Footer Section -->
+<footer class="mt-12 pt-6 border-t border-gray-200 text-center text-gray-600 text-sm w-full">
+  <p>© 2025 Professor Michael Lublinsky - Ben-Gurion University of the Negev</p>
+  <p class="mt-2">Last updated: March 2025</p>
+</footer>
+    </div>
+
+    <!-- JavaScript for Tab Functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all tab buttons
+        const tabButtons = document.querySelectorAll(".tab-btn");
+
+        // Get all tab content divs
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        // Function to handle tab changes
+        function changeTab(event) {
+          // Get the tab to show
+          const tabToShow = event.target.getAttribute("data-tab");
+
+          // Hide all tab contents
+          tabContents.forEach((content) => {
+            content.classList.remove("active");
+          });
+
+          // Show the selected tab content
+          document.getElementById(tabToShow).classList.add("active");
+
+          // Update active status of tab buttons
+          tabButtons.forEach((btn) => {
+            btn.classList.remove("active");
+          });
+
+          // Add active class to clicked button
+          event.target.classList.add("active");
+        }
+
+        // Add click event to all tab buttons
+        tabButtons.forEach((button) => {
+          button.addEventListener("click", changeTab);
+        });
+      });
+    </script>
+  </body>
+</html>
