@@ -558,6 +558,54 @@ video {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 /* ---- Base ---- */
 
 body {
@@ -584,29 +632,29 @@ body {
 
 .header-top {
   background: #ffffff;
-  padding: 2rem;
+  padding: 1rem 1.25rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1.5rem;
-  text-align: center;
+  gap: 1rem;
+  text-align: left;
 }
 
 @media (min-width: 600px) {
   .header-top {
-    flex-direction: row;
-    text-align: left;
+    padding: 2rem;
+    gap: 1.5rem;
   }
 }
 
 .profile-photo {
-  width: 120px;
-  height: 120px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 4px solid #1d4ed8;
-  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.15);
+  border: 3px solid #1d4ed8;
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
   flex-shrink: 0;
 }
 
@@ -614,11 +662,12 @@ body {
   .profile-photo {
     width: 140px;
     height: 140px;
+    border-width: 4px;
   }
 }
 
 .header-info h1 {
-  font-size: 1.85rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #1e3a8a;
   line-height: 1.2;
@@ -632,21 +681,28 @@ body {
 
 .header-subtitle {
   color: #4b5563;
-  font-size: 1rem;
+  font-size: 0.78rem;
   font-weight: 500;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 600px) {
+  .header-subtitle {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
 }
 
 .header-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-  justify-content: center;
+  display: none;
 }
 
 @media (min-width: 600px) {
   .header-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
     justify-content: flex-start;
   }
 }
@@ -664,11 +720,11 @@ body {
 .header-contact {
   background: #f8fafc;
   border-top: 1px solid #e2e8f0;
-  padding: 0.7rem 2rem;
+  padding: 0.5rem 1.25rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  font-size: 0.82rem;
+  gap: 0.25rem 1rem;
+  font-size: 0.75rem;
   color: #6b7280;
   justify-content: center;
 }
@@ -676,6 +732,9 @@ body {
 @media (min-width: 600px) {
   .header-contact {
     justify-content: flex-start;
+    padding: 0.7rem 2rem;
+    font-size: 0.82rem;
+    gap: 0.5rem 1.5rem;
   }
 }
 
