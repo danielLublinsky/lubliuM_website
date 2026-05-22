@@ -25,7 +25,7 @@
     <div class="container mx-auto px-4 py-8 max-w-4xl">
       <!-- Header Section -->
       <header
-        class="border-b border-gray-200 pb-6 mb-8 flex flex-col md:flex-row items-center md:items-start">
+        class="animate-header border-b border-gray-200 pb-6 mb-8 flex flex-col md:flex-row items-center md:items-start">
         <!-- Profile Image (Left) -->
         <div class="w-32 h-32 md:w-40 md:h-40 mb-4 md:mb-0 md:mr-6">
           <img
@@ -57,7 +57,7 @@
       </header>
 
       <!-- Tabs Navigation -->
-      <div class="border-b border-gray-200 mb-8">
+      <div class="animate-tabs border-b border-gray-200 mb-8">
         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center">
           <li class="mr-2">
             <button
@@ -112,7 +112,7 @@
       </div>
 
       <!-- Tab Content Container -->
-      <div class="bg-white rounded-lg shadow-md p-6">
+      <div class="animate-content bg-white rounded-lg shadow-md p-6">
         <!-- Main Tab Content -->
         <div id="main" class="tab-content active">
           <h2 class="text-2xl font-semibold text-blue-900 mb-4">Welcome</h2>
@@ -537,23 +537,20 @@
 
         // Function to handle tab changes
         function changeTab(event) {
-          // Get the tab to show
           const tabToShow = event.target.getAttribute("data-tab");
 
-          // Hide all tab contents
           tabContents.forEach((content) => {
             content.classList.remove("active");
           });
 
-          // Show the selected tab content
-          document.getElementById(tabToShow).classList.add("active");
+          const target = document.getElementById(tabToShow);
+          // Re-trigger animation by removing and re-adding the active class
+          target.classList.add("active");
+          target.style.animation = "none";
+          target.offsetHeight; // reflow
+          target.style.animation = "";
 
-          // Update active status of tab buttons
-          tabButtons.forEach((btn) => {
-            btn.classList.remove("active");
-          });
-
-          // Add active class to clicked button
+          tabButtons.forEach((btn) => btn.classList.remove("active"));
           event.target.classList.add("active");
         }
 

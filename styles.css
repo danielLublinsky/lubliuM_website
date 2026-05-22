@@ -32,6 +32,35 @@ body {
 
 .tab-content.active {
   display: block;
+  animation: fadeSlideIn 0.35s ease both;
+}
+
+/* Page load animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-header {
+  animation: fadeUp 0.6s ease both;
+}
+
+.animate-tabs {
+  animation: fadeIn 0.5s ease 0.3s both;
+}
+
+.animate-content {
+  animation: fadeSlideIn 0.5s ease 0.45s both;
 }
 
 .container {
