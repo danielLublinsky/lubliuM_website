@@ -3,138 +3,337 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BSF Collaboration - Prof. Michael Lublinsky</title>
+    <title>BSF Collaboration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet" />
-    <link href="output.css" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" />
     <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
       body {
-        background-image: url('images/bg.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
+        font-family: "Inter", sans-serif;
+        background: #f5f5f0;
+        color: #1a1a2e;
+      }
+
+      /* ── Hero ── */
+      .hero {
+        background: linear-gradient(135deg, #0d3b2e 0%, #1a6b4a 60%, #2d9e6b 100%);
+        padding: 5rem 2rem 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      .hero-label {
+        display: inline-block;
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #a8e6cf;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+        padding: 0.3rem 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero h1 {
+        font-family: "Merriweather", serif;
+        font-size: clamp(2rem, 5vw, 3.25rem);
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1.2;
+        max-width: 700px;
+        margin: 0 auto 1rem;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+        color: #a8e6cf;
+        max-width: 560px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .hero-divider {
+        width: 60px;
+        height: 3px;
+        background: #a8e6cf;
+        border-radius: 2px;
+        margin: 1.5rem auto 0;
+        opacity: 0.6;
+      }
+
+      /* ── Page body ── */
+      .page-body {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+      }
+
+      /* ── Section headings ── */
+      .section-heading {
+        font-family: "Merriweather", serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #0d3b2e;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .section-heading::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #c5d5c0;
+      }
+
+      /* ── People cards ── */
+      .people-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      @media (max-width: 600px) {
+        .people-grid { grid-template-columns: 1fr; }
+      }
+
+      .person-card {
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        transition: transform 0.25s, box-shadow 0.25s;
+      }
+
+      .person-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.13);
+      }
+
+      .person-photo {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+      }
+
+      .person-photo-placeholder {
+        width: 100%;
+        height: 240px;
+        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: #4caf50;
+      }
+
+      .person-photo-placeholder svg {
+        width: 64px;
+        height: 64px;
+        opacity: 0.45;
+      }
+
+      .person-photo-placeholder span {
+        font-size: 0.75rem;
+        color: #388e3c;
+        font-weight: 500;
+        opacity: 0.7;
+      }
+
+      .person-info {
+        padding: 1.25rem 1.4rem;
+        border-top: 3px solid #1a6b4a;
+      }
+
+      .person-name {
+        font-family: "Merriweather", serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0d3b2e;
+        margin-bottom: 0.25rem;
+      }
+
+      .person-title {
+        font-size: 0.82rem;
+        color: #5a7a6a;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .person-institution {
+        font-size: 0.78rem;
+        color: #888;
+      }
+
+      /* ── About section ── */
+      .about-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 2rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        margin-bottom: 2rem;
+      }
+
+      .about-card p {
+        color: #374151;
+        font-size: 0.93rem;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+      }
+
+      .about-card p:last-child { margin-bottom: 0; }
+
+      /* ── Info chips ── */
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+      }
+
+      .chip {
+        background: #e8f5e9;
+        border: 1px solid #a5d6a7;
+        color: #1b5e20;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.3rem 0.9rem;
+        border-radius: 999px;
+      }
+
+      /* ── BSF link ── */
+      .bsf-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: #0d3b2e;
+        color: #a8e6cf;
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: 0.6rem 1.4rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+
+      .bsf-link:hover { background: #1a6b4a; }
+
+      /* ── Footer ── */
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.78rem;
+        color: #9ca3af;
+        border-top: 1px solid #e5e7eb;
+        background: #fff;
       }
     </style>
   </head>
   <body>
-    <div class="page-wrapper">
 
-      <!-- Header -->
-      <header class="animate-header header-card">
-        <div class="header-top">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-label">Research Collaboration</div>
+      <h1>BSF Collaboration</h1>
+      <p class="hero-sub">
+        A joint research initiative between Israeli and American scientists,
+        supported by the United States–Israel Binational Science Foundation.
+      </p>
+      <div class="hero-divider"></div>
+    </div>
+
+    <!-- Body -->
+    <div class="page-body">
+
+      <!-- Collaborators -->
+      <h2 class="section-heading">Collaborators</h2>
+      <div class="people-grid">
+
+        <!-- Person 1: Michael Lublinsky -->
+        <div class="person-card">
           <img
             src="images/profile.jpg"
             alt="Professor Michael Lublinsky"
-            class="profile-photo" />
-          <div class="header-info">
-            <h1>Professor Michael Lublinsky</h1>
-            <p class="header-subtitle">Theoretical High Energy &amp; Nuclear Physics</p>
-            <div class="header-badges">
-              <span class="badge">Ben-Gurion University of the Negev</span>
-              <span class="badge">Department of Physics</span>
-            </div>
-          </div>
-        </div>
-        <div class="header-contact">
-          <span>📍 Building 54, Room 217, Beer Sheva 84105, Israel</span>
-          <span>📞 08-6461849 &nbsp;·&nbsp; 📠 08-6472904</span>
-          <a href="mailto:lublinm@bgu.ac.il">✉ lublinm@bgu.ac.il</a>
-        </div>
-      </header>
-
-      <!-- Back nav -->
-      <div class="animate-tabs" style="margin-bottom:1rem;">
-        <a href="index.html" style="
-          display: inline-flex;
-          align-items: center;
-          gap: 0.4rem;
-          background: rgba(255,255,255,0.93);
-          backdrop-filter: blur(8px);
-          color: #1e3a8a;
-          font-size: 0.875rem;
-          font-weight: 600;
-          padding: 0.45rem 1rem;
-          border-radius: 8px;
-          text-decoration: none;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-          transition: background 0.2s;
-        ">← Back to main site</a>
-      </div>
-
-      <!-- Content -->
-      <div class="animate-content content-card">
-
-        <h2 class="section-title">BSF Collaboration</h2>
-
-        <p style="color:#374151;line-height:1.7;margin-bottom:1.5rem;">
-          The Binational Science Foundation (BSF) collaboration supports joint research
-          between Israeli and American scientists, fostering scientific exchange and
-          advancing fundamental research in theoretical high energy and nuclear physics.
-        </p>
-
-        <!-- Info cards -->
-        <div style="display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1.75rem;">
-          <div style="
-            background:#eff6ff;
-            border-left:4px solid #1d4ed8;
-            border-radius:0 8px 8px 0;
-            padding:1rem 1.25rem;
-          ">
-            <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280;margin-bottom:0.3rem;">Funding Body</div>
-            <div style="font-weight:600;color:#1e3a8a;">United States-Israel Binational Science Foundation (BSF)</div>
-          </div>
-          <div style="
-            background:#eff6ff;
-            border-left:4px solid #1d4ed8;
-            border-radius:0 8px 8px 0;
-            padding:1rem 1.25rem;
-          ">
-            <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280;margin-bottom:0.3rem;">Focus Area</div>
-            <div style="font-weight:600;color:#1e3a8a;">Theoretical High Energy &amp; Nuclear Physics</div>
-          </div>
-          <div style="
-            background:#eff6ff;
-            border-left:4px solid #1d4ed8;
-            border-radius:0 8px 8px 0;
-            padding:1rem 1.25rem;
-          ">
-            <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280;margin-bottom:0.3rem;">Institution</div>
-            <div style="font-weight:600;color:#1e3a8a;">Ben-Gurion University of the Negev, Israel</div>
+            class="person-photo" />
+          <div class="person-info">
+            <div class="person-name">Prof. Michael Lublinsky</div>
+            <div class="person-title">Theoretical High Energy &amp; Nuclear Physics</div>
+            <div class="person-institution">Ben-Gurion University of the Negev, Israel</div>
           </div>
         </div>
 
-        <h3 style="font-size:1.1rem;font-weight:700;color:#1e3a8a;margin-bottom:0.75rem;">About the BSF</h3>
-        <p style="color:#374151;line-height:1.7;margin-bottom:1rem;">
-          The BSF was established in 1972 to promote scientific relations between the
-          United States and Israel. It funds collaborative research projects in a wide
-          range of scientific disciplines, enabling researchers from both countries to
-          work together on fundamental questions in science.
-        </p>
-        <p style="color:#374151;line-height:1.7;margin-bottom:1.5rem;">
-          This collaboration advances our understanding of Quantum ChromoDynamics (QCD),
-          heavy-ion collisions, and related phenomena at the frontier of theoretical physics.
-        </p>
-
-        <a
-          href="https://www.bsf.org.il"
-          target="_blank"
-          class="about-link-btn"
-          style="display:inline-flex;">
-          🔗 Visit BSF Website
-        </a>
+        <!-- Person 2: Placeholder -->
+        <div class="person-card">
+          <div class="person-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+            </svg>
+            <span>Photo coming soon</span>
+          </div>
+          <div class="person-info">
+            <div class="person-name">Collaborator</div>
+            <div class="person-title">To be added</div>
+            <div class="person-institution">United States</div>
+          </div>
+        </div>
 
       </div>
 
-      <!-- Footer -->
-      <footer>
-        <p>© 2025 Professor Michael Lublinsky · Ben-Gurion University of the Negev</p>
-        <p>Last updated: May 2026</p>
-      </footer>
+      <!-- Research Focus -->
+      <h2 class="section-heading">Research Focus</h2>
+      <div class="chips">
+        <span class="chip">Quantum ChromoDynamics (QCD)</span>
+        <span class="chip">High Energy Nuclear Physics</span>
+        <span class="chip">Fluid-Gravity Correspondence</span>
+        <span class="chip">Heavy Ion Collisions</span>
+        <span class="chip">Quark-Gluon Plasma</span>
+      </div>
+
+      <!-- About -->
+      <h2 class="section-heading">About the Collaboration</h2>
+      <div class="about-card">
+        <p>
+          This collaboration is supported by the United States–Israel Binational Science
+          Foundation (BSF), an organization established in 1972 to promote scientific
+          relations between the two countries by funding joint research projects.
+        </p>
+        <p>
+          The collaborative work spans fundamental questions in theoretical high energy
+          and nuclear physics, including the behavior of strongly-coupled matter at
+          extreme conditions, QCD dynamics at high energies, and the properties of
+          Quark-Gluon Plasma as studied at the LHC and RHIC.
+        </p>
+        <p>
+          <a href="https://www.bsf.org.il" target="_blank" class="bsf-link">
+            🔗 Visit the BSF Website
+          </a>
+        </p>
+      </div>
 
     </div>
+
+    <footer>
+      <p>BSF Collaboration · Ben-Gurion University of the Negev</p>
+    </footer>
+
   </body>
 </html>
