@@ -43,6 +43,8 @@ body {
   max-width: 900px;
   min-height: 90vh; /* Ensures content takes most of the height */
   margin: auto;
+}
+
 /* Contact Email Button */
 .contact-button {
   display: inline-block;

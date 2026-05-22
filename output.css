@@ -986,6 +986,19 @@ body {
   display: block;
 }
 
+.container {
+  flex: 1;
+  /* Makes the container take up available space */
+  background-color: rgba(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 900px;
+  min-height: 90vh;
+  /* Ensures content takes most of the height */
+  margin: auto;
+}
+
 /* Contact Email Button */
 
 .contact-button {
